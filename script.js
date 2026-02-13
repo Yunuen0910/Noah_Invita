@@ -1,4 +1,4 @@
-const eventDate = new Date("2026-04-20T14:00:00").getTime();
+const eventDate = new Date("2027-06-20T14:00:00").getTime();
 const timer = document.getElementById("timer");
 
 setInterval(() => {
