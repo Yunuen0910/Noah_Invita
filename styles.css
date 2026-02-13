@@ -1,51 +1,125 @@
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
-  background: #8F9C6E;
-  color: #333;
+    margin: 0;
+    background-color: #F5EFE6;
+    font-family: 'Poppins', sans-serif;
+    color: #3E4A3F;
+    text-align: center;
 }
 
+/* Tipografía Chanel */
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+/* Hero */
 .hero {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #89CFF0, #B0E0E6);
-  color: white;
+    padding: 100px 20px;
+    background: linear-gradient(#96A375, #A7C7E7);
+    color: white;
 }
 
-.countdown {
-  padding: 50px 20px;
+/* Countdown */
+.countdown-section {
+    padding: 60px 20px;
+    font-size: 1.5em;
 }
 
-#timer {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-top: 20px;
+/* Info */
+.info {
+    padding: 60px 20px;
+    background-color: #96A375;
+    color: white;
 }
 
-.details {
-  padding: 30px;
+/* Galería */
+.gallery {
+    padding: 60px 20px;
 }
 
-.rsvp {
-  margin: 40px 0;
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 15px 35px;
-  background: #8F9C6E;
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: 0.3s;
+.gallery img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.3s;
 }
 
-.btn:hover {
-  background: #8F9C6E;
+.gallery img:hover {
+    transform: scale(1.05);
 }
 
-footer {
-  padding: 20px;
-  font-size: 0.9rem;
+/* Confirmación */
+.confirm {
+    padding: 60px 20px;
 }
+
+.confirm-btn {
+    background-color: #5B7C99;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.confirm-btn:hover {
+    background-color: #96A375;
+}
+
+/* Globos */
+.balloons {
+    position: fixed;
+    bottom: -100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+}
+
+.balloon {
+    width: 60px;
+    height: 80px;
+    background-color: #A7C7E7;
+    border-radius: 50%;
+    animation: float 8s infinite ease-in;
+    opacity: 0.6;
+}
+
+.balloon:nth-child(2) {
+    background-color: #96A375;
+    animation-delay: 2s;
+}
+
+.balloon:nth-child(3) {
+    background-color: #5B7C99;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-120vh); }
+}
+
+/* Música botón */
+.music-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #96A375;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
