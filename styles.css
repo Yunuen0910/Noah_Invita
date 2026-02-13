@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background: #f4f8ff;
+  color: #333;
+}
+
+.hero {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #89CFF0, #B0E0E6);
+  color: white;
+}
+
+.countdown {
+  padding: 50px 20px;
+}
+
+#timer {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.details {
+  padding: 30px;
+}
+
+.rsvp {
+  margin: 40px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  background: #0077b6;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #023e8a;
+}
+
+footer {
+  padding: 20px;
+  font-size: 0.9rem;
+}
