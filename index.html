@@ -1,39 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noah quiere celebrar contigo su primer año y Bautizo</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bautizo Noah</title>
+
+    <!-- Tipografías -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <section class="hero">
-    <h1>¡Felicidades Baby Noah!</h1>
-    <p>Un pequeño milagro quiere celebrar contigo su primer año y Bautizo</p>
-  </section>
+<!-- 🎈 Globos flotantes -->
+<div class="balloons">
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+</div>
 
-  <section class="countdown">
-    <h2>Faltan solo</h2>
-    <div id="timer"></div>
-  </section>
+<!-- 🎵 Música -->
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-  <section class="details">
-    <p>📅 16 de Junio 2027</p>
-    <p>⏰ 2:00 PM</p>
-    <p>📍 <a href="https://maps.app.goo.gl/uYai2D5L3esdrnzF6" target="_blank">Ver ubicación</a></p>
-  </section>
+<button class="music-btn" onclick="playMusic()">🎵 Música</button>
 
-  <section class="rsvp">
-    <a class="btn" href="#" target="_blank">
-      Confirmar asistencia
+<!-- 🦕 Hero Section -->
+<section class="hero">
+    <h1>Bautizo de Noah</h1>
+    <p>Un pequeño milagro nos llena de alegría ✨</p>
+</section>
+
+<!-- ⏳ Cuenta regresiva -->
+<section class="countdown-section">
+    <h2>Faltan</h2>
+    <div id="countdown"></div>
+</section>
+
+<!-- 📍 Información -->
+<section class="info">
+    <h2>Detalles del Evento</h2>
+    <p><strong>Fecha:</strong> 20 Junio 2027</p>
+    <p><strong>Lugar:</strong> Iglesia de la </p>
+    <p><strong>Hora:</strong> 14:00 PM</p>
+</section>
+
+<!-- 🖼 Galería -->
+<section class="gallery">
+    <h2>Galería</h2>
+    <div class="gallery-grid">
+        <img src="img/dino1.jpg" alt="">
+        <img src="img/dino2.jpg" alt="">
+        <img src="img/dino3.jpg" alt="">
+    </div>
+</section>
+
+<!-- ✅ Confirmación -->
+<section class="confirm">
+    <h2>Confirma tu asistencia</h2>
+    <a href="https://wa.me/5217721102625" target="_blank" class="confirm-btn">
+        Confirmar por WhatsApp
     </a>
-  </section>
+</section>
 
-  <footer>
-    <p>Con cariño, la familia 💫</p>
-  </footer>
+<!-- Footer -->
+<footer>
+    <p>Con amor, Familia 💚</p>
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
+
