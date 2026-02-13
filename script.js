@@ -5,14 +5,12 @@ body {
   background: linear-gradient(to bottom, #ffffff, #eaf6ff);
   color: #333;
 }
-
 .hero {
   padding: 100px 20px;
   background: linear-gradient(135deg, #89CFF0, #4facfe);
   color: white;
   animation: fadeIn 1.5s ease-in-out;
 }
-
 .countdown {
   padding: 60px 20px;
 }
