@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
-  background: #6BB854;
+  background: #8F9C6E;
   color: #333;
 }
 
@@ -33,7 +33,7 @@ body {
 .btn {
   display: inline-block;
   padding: 15px 35px;
-  background: #0077b6;
+  background: #8F9C6E;
   color: white;
   text-decoration: none;
   border-radius: 30px;
@@ -42,7 +42,7 @@ body {
 }
 
 .btn:hover {
-  background: #023e8a;
+  background: #8F9C6E;
 }
 
 footer {
