@@ -5,38 +5,32 @@ body {
     color: #3E4A3F;
     text-align: center;
 }
-
 /* Tipografía Chanel */
 h1, h2 {
     font-family: 'Playfair Display', serif;
     letter-spacing: 2px;
 }
-
 h1 {
     font-size: 3em;
     text-transform: uppercase;
 }
-
 /* Hero */
 .hero {
     padding: 100px 20px;
     background: linear-gradient(#96A375, #A7C7E7);
     color: white;
 }
-
 /* Countdown */
 .countdown-section {
     padding: 60px 20px;
     font-size: 1.5em;
 }
-
 /* Info */
 .info {
     padding: 60px 20px;
     background-color: #96A375;
     color: white;
 }
-
 /* Galería */
 .gallery {
     padding: 60px 20px;
