@@ -1,77 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bautizo Noah</title>
-
-    <!-- Tipografías -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Bautizo de Noah</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- 🎈 Globos flotantes -->
-<div class="balloons">
-    <div class="balloon"></div>
-    <div class="balloon"></div>
-    <div class="balloon"></div>
-</div>
-
-<!-- 🎵 Música -->
-<audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
+<!-- Música -->
+<audio id="musica" autoplay loop>
+  <source src="img/musica.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music-btn" onclick="playMusic()">🎵 Música</button>
-
-<!-- 🦕 Hero Section -->
+<!-- Pantalla inicial -->
 <section class="hero">
-    <h1>Bautizo de Noah</h1>
-    <p>Un pequeño milagro nos llena de alegría ✨</p>
+  <div class="hero-content">
+    <h1>El Bautizo de Noah</h1>
+    <p>Con mucha alegría te invitamos</p>
+    <button onclick="mostrarInvitacion()">Ver Invitación</button>
+  </div>
 </section>
 
-<!-- ⏳ Cuenta regresiva -->
-<section class="countdown-section">
-    <h2>Faltan</h2>
-    <div id="countdown"></div>
+<!-- Sección elegante -->
+<section class="inicio">
+  <div class="overlay">
+    <h2>Un día muy especial</h2>
+    <p>Acompáñanos a celebrar este momento lleno de amor y bendiciones.</p>
+  </div>
 </section>
 
-<!-- 📍 Información -->
-<section class="info">
-    <h2>Detalles del Evento</h2>
-    <p><strong>Fecha:</strong> 20 Junio 2027</p>
-    <p><strong>Lugar:</strong> Iglesia de la </p>
-    <p><strong>Hora:</strong> 14:00 PM</p>
+<!-- Iglesia -->
+<section class="iglesia">
+  <h2>Ceremonia Religiosa</h2>
+  <p>Domingo 20 de Abril · 12:00 PM</p>
+  <p>Parroquia San José</p>
+  <button>Ver Ubicación</button>
 </section>
 
-<!-- 🖼 Galería -->
-<section class="gallery">
-    <h2>Galería</h2>
-    <div class="gallery-grid">
-        <img src="img/dino1.png" alt="Dino 1">
-        <img src="img/dino2.png" alt="Dino 2">
-        <img src="img/dino3.png" alt="Dino 3">
-    </div>
+<!-- Confirmación -->
+<section class="confirmacion">
+  <h2>Confirma tu asistencia</h2>
+  <button class="whatsapp">Confirmar por WhatsApp</button>
 </section>
-
-<!-- ✅ Confirmación -->
-<section class="confirm">
-    <h2>Confirma tu asistencia</h2>
-    <a href="https://wa.me/5217721102625" target="_blank" class="confirm-btn">
-        Confirmar por WhatsApp
-    </a>
-</section>
-
-<!-- Footer -->
-<footer>
-    <p>Con amor, Familia 💚</p>
-</footer>
 
 <script src="script.js"></script>
 </body>
 </html>
-
