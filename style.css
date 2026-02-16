@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Georgia, serif;
+  font-family: Lavishly Yours, serif;
   background-color: #F5EFE6;
   overflow-x: hidden;
 }
@@ -14,13 +14,13 @@ body {
   align-items: center;
   text-align: center;
   position: fixed;
-  width: 100%;
+  width: 200%;
   z-index: 1000;
   transition: opacity 1s ease;
 }
 
 .cover button {
-  padding: 12px 30px;
+  padding: 24px 60px;
   background-color: #A3B18A;
   border: none;
   color: white;
