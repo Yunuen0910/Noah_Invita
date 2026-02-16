@@ -43,7 +43,7 @@ section {
 /* SECCIÓN CON FONDO */
 .inicio {
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-              url("img/dino1.png") center/contain no-repeat;
+              url("img/dino3.png") center/contain no-repeat;
   background-color: #F5EFE6;
   color: white;
 }
