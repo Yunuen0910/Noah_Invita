@@ -1,47 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Bautizo de Noah</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bautizo de Noah</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Música -->
-<audio id="musica" autoplay loop>
-  <source src="img/estrellita.mp3" type="audio/mpeg">
+<audio id="musica" loop>
+  <source src="img/musica.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Pantalla inicial -->
-<section class="hero">
-  <div class="hero-content">
+<!-- PORTADA -->
+<div class="cover" id="cover">
+  <div class="cover-content">
     <h1>El Bautizo de Noah</h1>
-    <p>Con mucha alegría te invitamos</p>
-    <button onclick="mostrarInvitacion()">Ver Invitación</button>
+    <p>16 de junio de 2027</p>
+    <button onclick="abrirInvitacion()">Abrir Invitación</button>
+  </div>
+</div>
+
+<!-- CONTENIDO -->
+<div id="contenido" class="oculto">
+
+<section class="contador animar">
+  <h2>Faltan</h2>
+  <div id="cuenta"></div>
+</section>
+
+<section class="iglesia animar">
+  <div class="card">
+    <h2>Ceremonia Religiosa</h2>
+    <div class="detalle"></div>
+    <p class="fecha">16 de junio de 2027</p>
+    <p class="hora">12:00 PM</p>
+    <p class="lugar">Iglesia Virgen de la Candelaria</p>
+
+    <a href="https://maps.app.goo.gl/L9VetxHYfZ7VmSj99" target="_blank">
+      <button>Ver Ubicación</button>
+    </a>
   </div>
 </section>
 
-<!-- Sección elegante -->
-<section class="inicio">
-  <div class="overlay">
-    <h2>Un día muy especial</h2>
-    <p>Acompáñanos a celebrar este momento lleno de amor y bendiciones.</p>
+<section class="recepcion animar">
+  <div class="card">
+    <h2>Recepción</h2>
+    <div class="detalle"></div>
+    <p class="fecha">16 de junio de 2027</p>
+    <p class="hora">2:00 PM</p>
+    <p class="lugar">Salón de Eventos</p>
+    <button>Ver Ubicación</button>
   </div>
 </section>
 
-<!-- Iglesia -->
-<section class="iglesia">
-  <h2>Ceremonia Religiosa</h2>
-  <p>Domingo 20 de Abril · 12:00 PM</p>
-  <p>Parroquia San José</p>
-  <button>Ver Ubicación</button>
-</section>
-
-<!-- Confirmación -->
-<section class="Confirmacion">
+<section class="confirmacion animar">
   <h2>Confirma tu asistencia</h2>
-  <button class="whatsapp">Confirmar por WhatsApp</button>
+  <a href="https://wa.me/521TU_NUMERO?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Noah" target="_blank">
+    <button class="whatsapp">Confirmar por WhatsApp</button>
+  </a>
 </section>
+
+</div>
 
 <script src="script.js"></script>
 </body>
