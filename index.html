@@ -3,68 +3,282 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bautizo de Noah</title>
-<link rel="stylesheet" href="style.css">
+<title>Bautizo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat', sans-serif;
+background:#F4EDE4;
+color:#4B4B4B;
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+url('https://images.unsplash.com/photo-1520975922284-6d7d7f1a19c1') center/cover no-repeat;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-family:'Playfair Display', serif;
+font-size:3rem;
+letter-spacing:2px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+margin-bottom:30px;
+}
+
+.boton{
+padding:14px 40px;
+background:#C6B7A6;
+color:white;
+border-radius:40px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.boton:hover{
+background:#B5A391;
+}
+
+/* SECCIONES */
+
+.seccion{
+padding:100px 20px;
+text-align:center;
+max-width:900px;
+margin:auto;
+}
+
+.titulo{
+font-family:'Playfair Display', serif;
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.divisor{
+width:60px;
+height:2px;
+background:#C6B7A6;
+margin:20px auto;
+}
+
+/* EVENTO */
+
+.evento-box{
+margin-top:40px;
+}
+
+.evento-box h3{
+font-size:1.3rem;
+margin-bottom:10px;
+}
+
+.evento-box p{
+margin-bottom:8px;
+}
+
+/* BOTON UBICACION */
+
+.btn-ubicacion{
+display:inline-block;
+margin-top:15px;
+padding:10px 25px;
+border:1px solid #C6B7A6;
+border-radius:30px;
+text-decoration:none;
+color:#4B4B4B;
+transition:0.3s;
+}
+
+.btn-ubicacion:hover{
+background:#C6B7A6;
+color:white;
+}
+
+/* CONTADOR */
+
+.contador{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.box-tiempo{
+background:white;
+padding:20px;
+border-radius:10px;
+min-width:80px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.numero{
+font-size:1.5rem;
+font-weight:bold;
+}
+
+/* RSVP */
+
+.rsvp{
+margin-top:40px;
+}
+
+.rsvp a{
+margin:10px;
+display:inline-block;
+padding:12px 30px;
+border-radius:30px;
+background:#C6B7A6;
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+.rsvp a:hover{
+background:#B5A391;
+}
+
+/* ANIMACIONES */
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:all 1s ease;
+}
+
+.fade.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
 </head>
+
 <body>
 
-<audio id="musica" loop>
-  <source src="img/musica.mp3" type="audio/mpeg">
+<!-- HERO -->
+<section class="hero">
+<h1>Bautizo</h1>
+<p>Te invitamos a celebrar este momento especial</p>
+<a href="#evento" class="boton">Ver Invitación</a>
+</section>
+
+<!-- EVENTO -->
+<section id="evento" class="seccion fade">
+<div class="titulo">16 de Junio 2027</div>
+<div class="divisor"></div>
+
+<div class="evento-box">
+<h3>Misa – 12:00 PM</h3>
+<p>Iglesia Virgen de la Candelaria</p>
+<a href="https://maps.app.goo.gl/L9VetxHYfZ7VmSj99" target="_blank" class="btn-ubicacion">Ver Ubicación</a>
+</div>
+
+<div class="evento-box">
+<h3>Recepción – 2:00 PM</h3>
+<p>Salón de Eventos</p>
+<a href="#" class="btn-ubicacion">Ver Ubicación</a>
+</div>
+</section>
+
+<!-- CONTADOR -->
+<section class="seccion fade">
+<div class="titulo">El gran día está cerca</div>
+<div class="divisor"></div>
+
+<div class="contador" id="contador"></div>
+</section>
+
+<!-- RSVP -->
+<section class="seccion fade">
+<div class="titulo">Confirma tu asistencia</div>
+<div class="divisor"></div>
+
+<div class="rsvp">
+<a href="#">Asistiré</a>
+<a href="#">No asistiré</a>
+</div>
+</section>
+
+<!-- MUSICA -->
+<audio autoplay loop>
+<source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<!-- PORTADA -->
-<div class="cover" id="cover">
-  <div class="cover-content">
-    <h1>El Bautizo de Noah</h1>
-    <p>16 de junio de 2027</p>
-    <button onclick="abrirInvitacion()">Abrir Invitación</button>
-  </div>
-</div>
+<script>
 
-<!-- CONTENIDO -->
-<div id="contenido" class="oculto">
+/* CONTADOR */
 
-<section class="contador animar">
-  <h2>Faltan</h2>
-  <div id="cuenta"></div>
-</section>
+const fechaEvento = new Date("June 16, 2027 12:00:00").getTime();
+const contenedor = document.getElementById("contador");
 
-<section class="iglesia animar">
-  <div class="card">
-    <h2>Ceremonia Religiosa</h2>
-    <div class="detalle"></div>
-    <p class="fecha">16 de junio de 2027</p>
-    <p class="hora">12:00 PM</p>
-    <p class="lugar">Iglesia Virgen de la Candelaria</p>
+setInterval(()=>{
+const ahora = new Date().getTime();
+const diferencia = fechaEvento - ahora;
 
-    <a href="https://maps.app.goo.gl/L9VetxHYfZ7VmSj99" target="_blank">
-      <button>Ver Ubicación</button>
-    </a>
-  </div>
-</section>
+const dias = Math.floor(diferencia / (1000*60*60*24));
+const horas = Math.floor((diferencia % (1000*60*60*24)) / (1000*60*60));
+const minutos = Math.floor((diferencia % (1000*60*60)) / (1000*60));
+const segundos = Math.floor((diferencia % (1000*60)) / 1000);
 
-<section class="recepcion animar">
-  <div class="card">
-    <h2>Recepción</h2>
-    <div class="detalle"></div>
-    <p class="fecha">16 de junio de 2027</p>
-    <p class="hora">2:00 PM</p>
-    <p class="lugar">Salón de Eventos</p>
+contenedor.innerHTML = `
+<div class="box-tiempo"><div class="numero">${dias}</div>Días</div>
+<div class="box-tiempo"><div class="numero">${horas}</div>Horas</div>
+<div class="box-tiempo"><div class="numero">${minutos}</div>Min</div>
+<div class="box-tiempo"><div class="numero">${segundos}</div>Seg</div>
+`;
 
-    <a href="https://maps.app.goo.gl/DHuNKAnB9nTCEtgV8" target="_blank">
-    <button>Ver Ubicación</button>
-  </div>
-</section>
+},1000);
 
-<section class="confirmacion animar">
-  <h2>Confirma tu asistencia</h2>
-  <a href="https://wa.link/2lg5c0" target="_blank">
-    <button class="whatsapp">Confirmar por WhatsApp</button>
-  </a>
-</section>
+/* ANIMACION SCROLL */
 
-</div>
+const faders = document.querySelectorAll('.fade');
 
-<script src="script.js"></script>
+const appearOptions = {
+threshold:0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries){
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
+});
+},appearOptions);
+
+faders.forEach(fader=>{
+appearOnScroll.observe(fader);
+});
+
+</script>
+
 </body>
 </html>
+
