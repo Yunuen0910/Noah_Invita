@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bautizo</title>
+<title>Bautizo de NOAH</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -20,50 +19,59 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:'Lavishly Yours', sans-serif;
-background:#f3ece4;
+font-family:'Lora', serif;
+background:#F5EFE6;
 color:#3E3E3E;
-font-family:'Montserrat', sans-serif;
+overflow:hidden; /* BLOQUEA SCROLL INICIAL */
 }
 
 /* HERO */
 
 .hero{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-url('https://images.unsplash.com/photo-1520975922284-6d7d7f1a19c1') center/cover no-repeat;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-color:white;
 padding:20px;
+background:
+linear-gradient(rgba(245,239,230,0.85), rgba(245,239,230,0.85)),
+url('https://images.unsplash.com/photo-1608889175151-7c5d4e0b1e4c') center/cover no-repeat;
 }
 
 .hero h1{
 font-family:'Playfair Display', serif;
-font-size:3rem;
+font-size:1.5rem;
 letter-spacing:2px;
-margin-bottom:20px;
+margin-bottom:15px;
+}
+
+.nombre{
+font-family:'Playfair Display', serif;
+font-size:4rem;
+color:#6F8A63;
+margin-bottom:15px;
 }
 
 .hero p{
-font-size:1.2rem;
 margin-bottom:30px;
+font-size:1.1rem;
 }
 
 .boton{
 padding:14px 40px;
-background:#A3B18A;
-color:white;
 border-radius:40px;
-text-decoration:none;
+border:1px solid #A3B18A;
+background:transparent;
+color:#6F8A63;
+cursor:pointer;
 transition:0.3s;
 }
 
 .boton:hover{
-background:#B5A391;
+background:#A3B18A;
+color:white;
 }
 
 /* SECCIONES */
@@ -71,7 +79,7 @@ background:#B5A391;
 .seccion{
 padding:100px 20px;
 text-align:center;
-max-width:900px;
+max-width:800px;
 margin:auto;
 }
 
@@ -84,40 +92,23 @@ margin-bottom:20px;
 .divisor{
 width:60px;
 height:2px;
-background:#C6B7A6;
+background:#A3B18A;
 margin:20px auto;
 }
-
-/* EVENTO */
-
-.evento-box{
-margin-top:40px;
-}
-
-.evento-box h3{
-font-size:1.3rem;
-margin-bottom:10px;
-}
-
-.evento-box p{
-margin-bottom:8px;
-}
-
-/* BOTON UBICACION */
 
 .btn-ubicacion{
 display:inline-block;
 margin-top:15px;
-padding:15px 35px;
-border:1px solid #A3B18A;
+padding:10px 25px;
 border-radius:30px;
+border:1px solid #A3B18A;
+color:#6F8A63;
 text-decoration:none;
-color:#4B4B4B;
 transition:0.3s;
 }
 
 .btn-ubicacion:hover{
-background:#C6B7A6;
+background:#A3B18A;
 color:white;
 }
 
@@ -131,7 +122,7 @@ margin-top:40px;
 flex-wrap:wrap;
 }
 
-.box-tiempo{
+.box{
 background:white;
 padding:20px;
 border-radius:10px;
@@ -142,40 +133,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.05);
 .numero{
 font-size:1.5rem;
 font-weight:bold;
-}
-
-/* RSVP */
-
-.rsvp{
-margin-top:40px;
-}
-
-.rsvp a{
-margin:10px;
-display:inline-block;
-padding:12px 30px;
-border-radius:30px;
-background:#C6B7A6;
-color:white;
-text-decoration:none;
-transition:0.3s;
-}
-
-.rsvp a:hover{
-background:#B5A391;
-}
-
-/* ANIMACIONES */
-
-.fade{
-opacity:0;
-transform:translateY(30px);
-transition:all 1s ease;
-}
-
-.fade.visible{
-opacity:1;
-transform:translateY(0);
+color:#6F8A63;
 }
 
 </style>
@@ -185,97 +143,74 @@ transform:translateY(0);
 
 <!-- HERO -->
 <section class="hero">
-<h1>Bautizo</h1>
-<p>Te invitamos a celebrar este momento especial</p>
-<a href="#evento" class="boton">Ver Invitación</a>
+<h1>Bautizo de</h1>
+<div class="nombre">NOAH</div>
+<p>16 de Junio 2027</p>
+<button class="boton" onclick="abrirInvitacion()">Descubrir celebración</button>
 </section>
 
 <!-- EVENTO -->
-<section id="evento" class="seccion fade">
-<div class="titulo">16 de Junio 2027</div>
+<section id="contenido" class="seccion">
+<div class="titulo">La Celebración</div>
 <div class="divisor"></div>
 
-<div class="evento-box">
+<p>Con inmensa alegría celebramos el bautizo de nuestro amado hijo Noah y queremos compartir este momento tan especial contigo.</p>
+
+<br><br>
+
 <h3>Misa – 12:00 PM</h3>
 <p>Iglesia Virgen de la Candelaria</p>
-<a href="https://maps.app.goo.gl/L9VetxHYfZ7VmSj99" target="_blank" class="btn-ubicacion">Ver Ubicación</a>
-</div>
+<a href="https://maps.app.goo.gl/L9VetxHYfZ7VmSj99" target="_blank" class="btn-ubicacion">Ver ubicación</a>
 
-<div class="evento-box">
+<br><br>
+
 <h3>Recepción – 2:00 PM</h3>
-<p>Salón de Eventos</p>
-<a href="https://maps.app.goo.gl/HafdjQ2qSFfMBECVA" class="btn-ubicacion">Ver Ubicación</a>
-</div>
+<p>Salón de eventos</p>
+
 </section>
 
 <!-- CONTADOR -->
-<section class="seccion fade">
+<section class="seccion">
 <div class="titulo">El gran día está cerca</div>
 <div class="divisor"></div>
 
 <div class="contador" id="contador"></div>
 </section>
 
-<!-- RSVP -->
-<section class="seccion fade">
-<div class="titulo">Confirma tu asistencia</div>
-<div class="divisor"></div>
-
-<div class="rsvp">
-<a href="#">Asistiré</a>
-<a href="#">No asistiré</a>
-</div>
-</section>
-
 <!-- MUSICA -->
-<audio autoplay loop>
-<source img="Estrellita.mp3" type="audio/mpeg">
+<audio id="musica" loop>
+<source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 
+function abrirInvitacion(){
+document.body.style.overflow="auto";
+document.getElementById("contenido").scrollIntoView({behavior:"smooth"});
+document.getElementById("musica").play();
+}
+
 /* CONTADOR */
 
-const fechaEvento = new Date("June 16, 2027 12:00:00").getTime();
+const fecha = new Date("June 16, 2027 12:00:00").getTime();
 const contenedor = document.getElementById("contador");
 
 setInterval(()=>{
 const ahora = new Date().getTime();
-const diferencia = fechaEvento - ahora;
+const distancia = fecha - ahora;
 
-const dias = Math.floor(diferencia / (1000*60*60*24));
-const horas = Math.floor((diferencia % (1000*60*60*24)) / (1000*60*60));
-const minutos = Math.floor((diferencia % (1000*60*60)) / (1000*60));
-const segundos = Math.floor((diferencia % (1000*60)) / 1000);
+const dias = Math.floor(distancia/(1000*60*60*24));
+const horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+const minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
+const segundos = Math.floor((distancia%(1000*60))/1000);
 
-contenedor.innerHTML = `
-<div class="box-tiempo"><div class="numero">${dias}</div>Días</div>
-<div class="box-tiempo"><div class="numero">${horas}</div>Horas</div>
-<div class="box-tiempo"><div class="numero">${minutos}</div>Min</div>
-<div class="box-tiempo"><div class="numero">${segundos}</div>Seg</div>
+contenedor.innerHTML=`
+<div class="box"><div class="numero">${dias}</div>Días</div>
+<div class="box"><div class="numero">${horas}</div>Horas</div>
+<div class="box"><div class="numero">${minutos}</div>Min</div>
+<div class="box"><div class="numero">${segundos}</div>Seg</div>
 `;
-
 },1000);
-
-/* ANIMACION SCROLL */
-
-const faders = document.querySelectorAll('.fade');
-
-const appearOptions = {
-threshold:0.2
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries){
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('visible');
-}
-});
-},appearOptions);
-
-faders.forEach(fader=>{
-appearOnScroll.observe(fader);
-});
 
 </script>
 
