@@ -22,7 +22,7 @@ body {
     height: 100vh;
     width: 100%;
     /* Asegúrate de tener una imagen de fondo 'FONDO_ACUARELA.jpg' */
-    background: url('FONDO_ACUARELA.jpg') center/cover no-repeat;
+    background: url('img/FONDO_ACUARELA.png') center/cover no-repeat;
     background-color: var(--color-verde-claro); /* Backup */
     display: flex;
     flex-direction: column;
