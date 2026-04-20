@@ -20,11 +20,20 @@ function abrirInvitacion() {
 }
 
 /* CONTADOR DINÁMICO (Sube tu fecha real aquí) */
-const fechaEvento = new Date("June 16, 2027 12:00:00").getTime();
+/* CONFIGURACIÓN DE LA FECHA */
+// Edita solo esta línea para cambiar la fecha de toda la invitación
+const fechaEventoString = "June 16, 2027 12:00:00"; 
+const fechaEvento = new Date(fechaEventoString).getTime();
 
 function actualizarContador() {
     const ahora = new Date().getTime();
     const diferencia = fechaEvento - ahora;
+
+    // Ponemos la fecha legible debajo del contador
+    // Esto lo convierte a algo como "16 de junio de 2027"
+    const opciones = { day: 'numeric', month: 'long', year: 'numeric' };
+    const fechaLegible = new Date(fechaEventoString).toLocaleDateString('es-ES', opciones);
+    document.getElementById("fecha-texto").innerHTML = fechaLegible;
 
     if (diferencia <= 0) {
         document.getElementById("cuenta").innerHTML = "¡Es hoy!";
@@ -34,9 +43,8 @@ function actualizarContador() {
     const d = Math.floor(diferencia / (1000 * 60 * 60 * 24));
     const h = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const m = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-    const s = Math.floor((diferencia % (1000 * 60)) / 1000); // Añadimos segundos
+    const s = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-    // Usamos padStart para que siempre haya 2 dígitos (ej: "09" en lugar de "9")
     document.getElementById("cuenta").innerHTML = `
         ${d}d | ${h.toString().padStart(2, '0')}h | 
         ${m.toString().padStart(2, '0')}m | 
@@ -44,6 +52,7 @@ function actualizarContador() {
     `;
 }
 
+// Iniciar el intervalo
 setInterval(actualizarContador, 1000);
 actualizarContador();
 
@@ -60,3 +69,4 @@ function iniciarScroll() {
 
     elementos.forEach(el => observer.observe(el));
 }
+
