@@ -1,99 +1,62 @@
-body {
-  margin: 0;
-  font-family: Lavishly Yours, serif;
-  background-color: #F5EFE6;
-  overflow-x: hidden;
+function abrirInvitacion() {
+    const contenido = document.getElementById("contenido");
+    const cover = document.getElementById("cover");
+    const musica = document.getElementById("musica");
+
+    // Mostramos el contenido
+    contenido.style.display = "block";
+    
+    // Desvanecemos la portada
+    cover.style.opacity = "0";
+    setTimeout(() => {
+        cover.style.visibility = "hidden";
+        iniciarScroll(); // Activamos el efecto scroll
+    }, 1200);
+
+    // Intentamos reproducir la música
+    if (musica) {
+        musica.play().catch(e => console.log("Audio en espera de interacción."));
+    }
 }
 
-/* PORTADA */
-.cover {
-  height: 100vh;
-  width: 100%;
-  background: url('FONDO_ACUARELA.jpg') center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: fixed;
-  z-index: 1000;
-  transition: opacity 1s ease;
-  overflow: hidden;
+/* CONTADOR DINÁMICO (Sube tu fecha real aquí) */
+const fechaEvento = new Date("June 16, 2027 12:00:00").getTime();
+
+function actualizarContador() {
+    const ahora = new Date().getTime();
+    const diferencia = fechaEvento - ahora;
+
+    if (diferencia <= 0) {
+        document.getElementById("cuenta").innerHTML = "¡Es hoy!";
+        return;
+    }
+
+    const d = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diferencia % (1000 * 60)) / 1000); // Añadimos segundos
+
+    // Usamos padStart para que siempre haya 2 dígitos (ej: "09" en lugar de "9")
+    document.getElementById("cuenta").innerHTML = `
+        ${d}d | ${h.toString().padStart(2, '0')}h | 
+        ${m.toString().padStart(2, '0')}m | 
+        ${s.toString().padStart(2, '0')}s
+    `;
 }
 
-/* DINO PRINCIPAL */
-.dino-principal {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 320px;
-}
+setInterval(actualizarContador, 1000);
+actualizarContador();
 
-.cover button {
-  padding: 24px 60px;
-  background-color: #A3B18A;
-  border: none;
-  color: white;
-  border-radius: 30px;
-  cursor: pointer;
-}
+/* ANIMACIONES SCROLL (Intersection Observer) */
+function iniciarScroll() {
+    const elementos = document.querySelectorAll(".animar");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.1 }); // Se activa cuando el 10% del elemento es visible
 
-/* OCULTO */
-.oculto {
-  display: none;
-}
-
-section {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-/* CARD */
-.card {
-  background-color: #EDE3D9;
-  padding: 50px 30px;
-  border-radius: 20px;
-  width: 85%;
-  max-width: 400px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-.detalle {
-  width: 60px;
-  height: 2px;
-  background-color: #A3B18A;
-  margin: 15px auto 25px auto;
-}
-
-.card button, .whatsapp {
-  padding: 12px 25px;
-  background-color: #A3B18A;
-  border: none;
-  color: white;
-  border-radius: 25px;
-  margin-top: 15px;
-  cursor: pointer;
-}
-
-/* CONTADOR */
-#cuenta {
-  font-size: 1.5rem;
-  margin-top: 20px;
-}
-
-/* ANIMACIONES */
-.animar {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s ease;
-}
-
-.animar.visible {
-  opacity: 1;
-  transform: translateY(0);
+    elementos.forEach(el => observer.observe(el));
 }
