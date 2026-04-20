@@ -13,52 +13,66 @@
 
     <div id="cover" class="cover">
         <div class="cover-content">
-            <p class="subtitulo-caps">Estás invitado al bautizo de</p>
+            <p class="subtitulo-caps">Nos complace Invitarte al Bautizo de</p>
             <h1>Noah</h1>
             <br>
             <button onclick="abrirInvitacion()">Abrir Invitación</button>
         </div>
-        <img src="img/DINO_PRINCIPAL.png" alt="Dino Noah" class="dino-principal">
+        <img src="DINO_PRINCIPAL.png" alt="Dino Noah" class="dino-principal">
     </div>
 
     <audio id="musica" loop>
-        <source src="img/Estrellita.mp3" type="audio/mpeg">
+        <source src="tu-musica.mp3" type="audio/mpeg">
     </audio>
 
     <div id="contenido">
         
         <section class="animar seccion-bienvenida">
-            <div class="card">
-                <h2>Mi Bautizo</h2>
-                <div class="detalle"></div>
-                <p>Con gran alegría, compartimos con ustedes el inicio de mi camino en la fe.</p>
-                <div id="cuenta"></div> </div>
-        </section>
+    <div class="card">
+        <h2>Mi Bautizo & Primer Año</h2>
+        <div class="detalle"></div>
+        
+        <p style="margin-bottom: 20px;">
+            Con la alegría de mi primer año de vida y la pureza de un corazón que empieza a conocer a Dios, hoy recibo mi primer sacramento.
+        </p>
+        
+        <p style="font-style: italic; margin-bottom: 25px;">
+            Hoy celebro la dicha de existir y el compromiso de crecer bajo el manto de la fe, rodeado de amor y de buenos ejemplos. Te invito a ser parte de esta doble celebración donde el agua bendita marcará el inicio de mi historia con Jesús y mi pastel de cumpleaños será el símbolo de un año lleno de bendiciones.
+        </p>
 
-        <section class="animar seccion-familia">
-            <div class="card">
-                <h2>Mis Padres y Padrinos</h2>
-                <div class="detalle"></div>
-                <div class="grid-familia">
-                    <div>
-                        <h3>Mis Padres</h3>
-                        <p>Nombre de Papá</p>
-                        <p>Nombre de Mamá</p>
-                    </div>
-                    <div>
-                        <h3>Mis Padrinos</h3>
-                        <p>Nombre del Padrino</p>
-                        <p>Nombre de la Madrina</p>
-                    </div>
+        <div id="cuenta"></div> <p id="fecha-texto" style="font-weight: 600; color: var(--verde-oscuro); margin-top: 15px; letter-spacing: 1px;"></p>
+    </div>
+</section>
+
+<section class="animar seccion-familia">
+    <div class="card">
+        <h2>Mis Padres</h2>
+        <div class="detalle"></div>
+        
+        <div class="grid-familia">
+            <div class="columna-familia">
+                <div class="lista-nombres">
+                    <p>Miguel De Jésus Trigueros Garcia</p>
+                    <p>Bellkies Garcia</p>
                 </div>
             </div>
-        </section>
+            <h2>Mis Padrinos</h2>
+        <div class="detalle"></div>
+            <div class="columna-familia">
+                    <div class="lista-nombres">
+                    <p>Nombre del Padrino</p>
+                    <p>Nombre de la Madrina</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <section class="animar seccion-foto-principal">
             <img src="--- FOTO_DE_FAMILIA.jpg ---" alt="Familia Noah" class="foto-grande">
         </section>
 
-        <section class="animar seccion-evento">
+       <section class="animar seccion-evento">
             <div class="card">
                 <h2>Ceremonia Religiosa</h2>
                 <div class="detalle"></div>
@@ -70,7 +84,6 @@
                 <a href="https://share.google/NCnTxL2NXAfChSaHe" target="_blank" class="btn-mapa">Ver Ubicación (Misa)</a>
             </div>
         </section>
-
         <section class="animar seccion-foto-bebe">
             <img src="--- FOTO_DEL_BEBE.jpg ---" alt="Noah" class="foto-mediana">
         </section>
