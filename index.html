@@ -1,240 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bautizo de NOAH</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Meow Script:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Meow Script', serif;
-background:#F5EFE6;
-color:#3E3E3E;
-overflow:hidden;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-background:url('FONDO_ACUARELA.png') center/cover no-repeat;
-position:relative;
-overflow:hidden;
-}
-
-/* Dino principal */
-.dino-principal{
-position:absolute;
-bottom:0;
-left:50%;
-transform:translateX(-50%);
-width:320px;
-opacity:0.95;
-}
-
-
-/* Textos */
-
-.hero h1{
-font-family:'Playfair Display', serif;
-font-size:1.5rem;
-letter-spacing:2px;
-margin-bottom:15px;
-}
-
-.nombre{
-font-family:'Playfair Display', serif;
-font-size:4rem;
-color:#6F8A63;
-margin-bottom:15px;
-}
-
-.hero p{
-margin-bottom:30px;
-font-size:1.1rem;
-}
-
-.boton{
-padding:14px 40px;
-border-radius:40px;
-border:1px solid #A3B18A;
-background:transparent;
-color:#6F8A63;
-cursor:pointer;
-transition:0.3s;
-}
-
-.boton:hover{
-background:#A3B18A;
-color:white;
-}
-
-/* SECCIONES */
-
-.seccion{
-padding:100px 20px;
-text-align:center;
-max-width:800px;
-margin:auto;
-}
-
-.titulo{
-font-family:'Playfair Display', serif;
-font-size:2rem;
-margin-bottom:20px;
-}
-
-.divisor{
-width:60px;
-height:2px;
-background:#A3B18A;
-margin:20px auto;
-}
-
-.btn-ubicacion{
-display:inline-block;
-margin-top:15px;
-padding:10px 25px;
-border-radius:30px;
-border:1px solid #A3B18A;
-color:#6F8A63;
-text-decoration:none;
-transition:0.3s;
-}
-
-.btn-ubicacion:hover{
-background:#A3B18A;
-color:white;
-}
-
-/* CONTADOR */
-
-.contador{
-display:flex;
-justify-content:center;
-gap:20px;
-margin-top:40px;
-flex-wrap:wrap;
-}
-
-.box{
-background:white;
-padding:20px;
-border-radius:10px;
-min-width:80px;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
-
-.numero{
-font-size:1.5rem;
-font-weight:bold;
-color:#6F8A63;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bautizo de Noah</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero">
-<h1>Bautizo de</h1>
-<div class="nombre">NOAH</div>
-<p>16 de Junio 2027</p>
+    <div id="cover" class="cover">
+        <div class="cover-content">
+            <p class="subtitulo-caps">Estás invitado al bautizo de</p>
+            <h1>Noah</h1>
+            <br>
+            <button onclick="abrirInvitacion()">Abrir Invitación</button>
+        </div>
+        <img src="DINO_PRINCIPAL.png" alt="Dino Noah" class="dino-principal">
+    </div>
 
-<button class="boton" onclick="abrirInvitacion()">
-Descubrir celebración
-</button>
+    <audio id="musica" loop>
+        <source src="tu-musica.mp3" type="audio/mpeg">
+    </audio>
 
-<!-- Dino -->
-<img src="DINO_PRINCIPAL.png" class="dino-principal">
+    <div id="contenido">
+        
+        <section class="animar seccion-bienvenida">
+            <div class="card">
+                <h2>Mi Bautizo</h2>
+                <div class="detalle"></div>
+                <p>Con gran alegría, compartimos con ustedes el inicio de mi camino en la fe.</p>
+                <div id="cuenta"></div> </div>
+        </section>
 
-</section>
+        <section class="animar seccion-familia">
+            <div class="card">
+                <h2>Mis Padres y Padrinos</h2>
+                <div class="detalle"></div>
+                <div class="grid-familia">
+                    <div>
+                        <h3>Mis Padres</h3>
+                        <p>Nombre de Papá</p>
+                        <p>Nombre de Mamá</p>
+                    </div>
+                    <div>
+                        <h3>Mis Padrinos</h3>
+                        <p>Nombre del Padrino</p>
+                        <p>Nombre de la Madrina</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- EVENTO -->
-<section id="contenido" class="seccion">
-<div class="titulo">La Celebración</div>
-<div class="divisor"></div>
+        <section class="animar seccion-foto-principal">
+            <img src="--- FOTO_DE_FAMILIA.jpg ---" alt="Familia Noah" class="foto-grande">
+        </section>
 
-<p>Hace un año Dios nos regaló el mayor tesoro: la vida de nuestro querido Noah. Han sido 12 meses de luz, ternura y felicidad que han transformado nuestro hogar.
-Hoy queremos celebrar no solo su Primer Aniversario, sino también el momento en que recibirá el Sacramento del Bautizo, marcando el inicio de su camino espiritual.
-Acompáñanos a dar gracias por este hermoso año y a compartir la bendición de este día tan especial.</p>
+        <section class="animar seccion-evento">
+            <div class="card">
+                <h2>Ceremonia Religiosa</h2>
+                <div class="detalle"></div>
+                <div class="info-evento">
+                    <p><strong>Hora:</strong> 12:00 hrs</p>
+                    <p><strong>Lugar:</strong> Parroquia de San Francisco</p>
+                    <p>Calle Principal #123, Ciudad</p>
+                </div>
+                <a href="https://share.google/NCnTxL2NXAfChSaHe" target="_blank" class="btn-mapa">Ver Ubicación (Misa)</a>
+            </div>
+        </section>
 
-<br><br>
+        <section class="animar seccion-foto-bebe">
+            <img src="--- FOTO_DEL_BEBE.jpg ---" alt="Noah" class="foto-mediana">
+        </section>
 
-<h3>Misa – 12:00 PM</h3>
-<p>Iglesia Virgen de la Candelaria</p>
-<a href="https://maps.app.goo.gl/L9VetxHYfZ7VmSj99" target="_blank" class="btn-ubicacion">Ver ubicación</a>
+        <section class="animar seccion-evento">
+            <div class="card card-recepcion">
+                <h2>Recepción</h2>
+                <div class="detalle"></div>
+                <div class="info-evento">
+                    <p><strong>Hora:</strong> 14:00 hrs</p>
+                    <p><strong>Lugar:</strong> Salón "El Jardín"</p>
+                    <p>Avenida Las Palmas #456, Ciudad</p>
+                </div>
+                <a href="https://share.google/HXHiYoXar7ox96e7I" target="_blank" class="btn-mapa">Ver Ubicación (Salón)</a>
+            </div>
+        </section>
 
-<br><br>
+        <section class="animar seccion-confirmacion">
+            <div class="card">
+                <h2>Asistencia</h2>
+                <div class="detalle"></div>
+                <p>Tu presencia es nuestro mejor regalo.</p>
+                <a href="https://wa.me/TUNUMERO?text=Hola,%20confirmo%20asistencia%20al%20bautizo%20de%20Noah" target="_blank" class="btn-confirmar">Confirmar por WhatsApp</a>
+            </div>
+        </section>
 
-<h3>Recepción – 2:00 PM</h3>
-<p>Salón de eventos</p>
+    </div>
 
-</section>
-
-<!-- CONTADOR -->
-<section class="seccion">
-<div class="titulo">El gran día está cerca</div>
-<div class="divisor"></div>
-
-<div class="contador" id="contador"></div>
-</section>
-
-<!-- MUSICA -->
-<audio id="musica" loop>
-<source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-
-function abrirInvitacion(){
-document.body.style.overflow="auto";
-document.getElementById("contenido").scrollIntoView({behavior:"smooth"});
-document.getElementById("musica").play();
-}
-
-/* CONTADOR */
-
-const fecha = new Date("June 16, 2027 12:00:00").getTime();
-const contenedor = document.getElementById("contador");
-
-setInterval(()=>{
-const ahora = new Date().getTime();
-const distancia = fecha - ahora;
-
-const dias = Math.floor(distancia/(1000*60*60*24));
-const horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
-const minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
-const segundos = Math.floor((distancia%(1000*60))/1000);
-
-contenedor.innerHTML=`
-<div class="box"><div class="numero">${dias}</div>Días</div>
-<div class="box"><div class="numero">${horas}</div>Horas</div>
-<div class="box"><div class="numero">${minutos}</div>Min</div>
-<div class="box"><div class="numero">${segundos}</div>Seg</div>
-`;
-},1000);
-
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
