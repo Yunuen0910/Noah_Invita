@@ -8,14 +8,21 @@
     --texto: #4A4A4A;
     --verde-oscuro: #6B705C;
 }
+/* 1. Forzamos que los títulos y el contador recuperen Tangerine */
+h1, h2, #cuenta, .titulo-cursivo {
+    font-family: 'Tangerine', cursive !important;
+}
 
+/* 2. El cuerpo puede ser Montserrat para que se lea bien, 
+   pero si quieres TODO en cursiva, cambia 'Montserrat' por 'Tangerine' aquí: */
 body {
     margin: 0;
-    background-color: var(--color-crema); /* Tu color crema base */
-    background-image: url('img/dino1.png'); /* La imagen que pediste */
-    background-repeat: repeat; /* Para que se repita como patrón */
-    background-size: 120px; /* Tamaño de los dinosaurios, ajústalo si los quieres más grandes */
-    background-attachment: fixed; /* Esto hace que el fondo no se mueva al scrollear */
+    font-family: 'Montserrat', sans-serif; /* Texto de lectura */
+    background-color: var(--color-crema);
+    background-image: url('img/dino1.png');
+    background-repeat: repeat;
+    background-size: 120px;
+    background-attachment: fixed;
     overflow-x: hidden;
     color: var(--texto);
 }
