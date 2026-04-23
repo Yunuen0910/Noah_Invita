@@ -11,8 +11,11 @@
 
 body {
     margin: 0;
-    font-family: 'Tangerine', cursive;
-    background-color: var(--color-crema);
+    background-color: var(--color-crema); /* Tu color crema base */
+    background-image: url('img/dino1.png'); /* La imagen que pediste */
+    background-repeat: repeat; /* Para que se repita como patrón */
+    background-size: 120px; /* Tamaño de los dinosaurios, ajústalo si los quieres más grandes */
+    background-attachment: fixed; /* Esto hace que el fondo no se mueva al scrollear */
     overflow-x: hidden;
     color: var(--texto);
 }
@@ -90,22 +93,23 @@ body {
 }
 
 section {
-    min-height: 80vh; /* Secciones más cortas para efecto scroll */
+    min-height: auto; /* Quitamos el 80vh que las separaba mucho */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 100px 20px;
+    padding: 10px 20px; /* Reducimos el espacio arriba y abajo de cada sección */
 }
 
 .card {
     background-color: white;
-    padding: 100px 100px;
+    padding: 30px 25px; /* Reducimos el espacio interno para que no sea tan gigante */
     border-radius: 25px;
     width: 100%;
     max-width: 400px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin: 5px auto; /* Reducimos el espacio entre una tarjeta y otra */
 }
 
 .card h2 {
