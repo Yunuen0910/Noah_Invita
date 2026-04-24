@@ -243,7 +243,33 @@ section {
     transform: translateY(30px);
     transition: all 1s ease;
 }
+/* Ajuste para que el itinerario y regalos se pongan uno al lado del otro */
+.grid-familia {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap; /* Si la pantalla es muy chica, se ponen uno abajo del otro */
+    margin-top: 20px;
+}
 
+.columna-familia {
+    flex: 1;
+    min-width: 140px;
+    max-width: 200px;
+}
+
+/* Forzar que los títulos de estas secciones también sean Tangerine */
+.card h2 {
+    font-family: 'Tangerine', cursive !important;
+}
+
+/* Estilo para los links de regalo para que no parezcan botones de mapa gigantes */
+.card .btn-mapa {
+    font-size: 0.75rem;
+    padding: 8px 15px;
+    letter-spacing: 1px;
+}
 .animar.visible {
     opacity: 1;
     transform: translateY(0);
