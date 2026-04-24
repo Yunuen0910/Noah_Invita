@@ -81,18 +81,13 @@ body {
 }
 
 .cover button {
-    padding: 20px 50px;
+    padding: 15px 40px;
+    font-size: 1rem; /* Texto más claro */
+    letter-spacing: 2px;
     background-color: var(--color-menta);
-    border: none;
-    color: white;
-    border-radius: 45px;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
+    border-radius: 50px;
+    margin-top: 20px;
+    /* Mantenemos tus sombras y transiciones */
 }
 
 .cover button:hover {
