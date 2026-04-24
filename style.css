@@ -20,7 +20,7 @@ body {
     
     /* ---- CONFIGURACIÓN DEL FONDO FIJO (PARALLAX) ---- */
     background-color: var(--color-crema); /* Color de respaldo */
-    background-image: url('img/FONDO_NOAH_FIJO.jpg'); /* Tu nueva imagen de Canva */
+    background-image: url('img/FONDO_NOAH_FIJO.png'); /* Tu nueva imagen de Canva */
     background-repeat: no-repeat; /* No queremos que se repita */
     background-position: center center; /* Centramos la imagen */
     background-size: cover; /* ¡CLAVE! Ajusta la imagen para cubrir la pantalla sin deformarse */
