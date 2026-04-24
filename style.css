@@ -13,16 +13,20 @@ h1, h2, #cuenta, .titulo-cursivo {
     font-family: 'Tangerine', cursive !important;
 }
 
-/* 2. El cuerpo puede ser Montserrat para que se lea bien, 
-   pero si quieres TODO en cursiva, cambia 'Montserrat' por 'Tangerine' aquí: */
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif; /* Texto de lectura */
-    background-color: var(--color-crema);
-    background-image: url('img/dino1.png');
-    background-repeat: repeat;
-    background-size: 120px;
-    background-attachment: fixed;
+    /* Usamos Montserrat para lectura, Tangerine para títulos (esto ya lo arreglamos) */
+    font-family: 'Montserrat', sans-serif; 
+    
+    /* ---- CONFIGURACIÓN DEL FONDO FIJO (PARALLAX) ---- */
+    background-color: var(--color-crema); /* Color de respaldo */
+    background-image: url('img/FONDO_NOAH_FIJO.jpg'); /* Tu nueva imagen de Canva */
+    background-repeat: no-repeat; /* No queremos que se repita */
+    background-position: center center; /* Centramos la imagen */
+    background-size: cover; /* ¡CLAVE! Ajusta la imagen para cubrir la pantalla sin deformarse */
+    background-attachment: fixed; /* ¡LA MAGIA! El fondo se queda quieto */
+    /* ------------------------------------------------- */
+    
     overflow-x: hidden;
     color: var(--texto);
 }
