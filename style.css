@@ -1,292 +1,556 @@
-/* VARIABLES DE COLOR (Paleta de Noah) */
-:root {
-    --color-menta: #71DBD2;
-    --color-crema: #EEFFDB;
-    --color-verde-claro: #ADE4B5;
-    --color-verde-lima: #D0EAA3;
-    --color-amarillo: #FFF18C;
-    --texto: #4A4A4A;
-    --verde-oscuro: #6B705C;
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/* 1. Forzamos que los títulos y el contador recuperen Tangerine */
-h1, h2, #cuenta, .titulo-cursivo {
-    font-family: 'Tangerine', cursive !important;
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    /* Usamos Montserrat para lectura, Tangerine para títulos (esto ya lo arreglamos) */
-    font-family: 'Montserrat', sans-serif; 
-    
-    /* ---- CONFIGURACIÓN DEL FONDO FIJO (PARALLAX) ---- */
-    background-color: var(--color-crema); /* Color de respaldo */
-    background-image: url('img/FONDO_NOAH_FIJO.png'); /* Tu nueva imagen de Canva */
-    background-repeat: no-repeat; /* No queremos que se repita */
-    background-position: center center; /* Centramos la imagen */
-    background-size: cover; /* ¡CLAVE! Ajusta la imagen para cubrir la pantalla sin deformarse */
-    background-attachment: fixed; /* ¡LA MAGIA! El fondo se queda quieto */
-    /* ------------------------------------------------- */
-    
-    overflow-x: hidden;
-    color: var(--texto);
+
+    background: #F4EEE4;
+
+    color: #665548;
+
+    font-family: 'Montserrat', sans-serif;
+
+    overflow: hidden;
 }
 
-/* PORTADA (COVER) */
-.cover {
-    height: 100vh;
+
+/* =========================================
+   PORTADA
+========================================= */
+
+.portada {
+
+    position: relative;
+
     width: 100%;
-    /* Asegúrate de tener una imagen de fondo 'FONDO_ACUARELA.jpg' */
-    background: url('img/FONDO_ACUARELA.png') center/cover no-repeat;
-    background-color: var(--color-verde-claro); /* Backup */
+    height: 100vh;
+    height: 100dvh;
+
+    overflow: hidden;
+
     display: flex;
-    flex-direction: column;
+
     justify-content: center;
     align-items: center;
+
     text-align: center;
-    position: fixed;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(163,177,138,0.12),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(175,193,208,0.15),
+            transparent 30%
+        ),
+
+        #F4EEE4;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.contenido-portada {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: 90%;
+    max-width: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   TEXTO "BAUTIZO"
+========================================= */
+
+.texto-pequeno {
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.75rem;
+
+    font-weight: 500;
+
+    letter-spacing: 5px;
+
+    color: #7F956B;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   ORNAMENTOS
+========================================= */
+
+.ornamento {
+
+    color: #A57E63;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.ornamento.inferior {
+
+    margin-top: 5px;
+
+    margin-bottom: 20px;
+
+    font-size: 1.2rem;
+
+    color: #A3B18A;
+}
+
+
+/* =========================================
+   NOMBRE
+========================================= */
+
+h1 {
+
+    font-family: 'Sacramento', cursive;
+
+    font-size: clamp(5rem, 23vw, 8rem);
+
+    font-weight: 400;
+
+    line-height: 0.9;
+
+    color: #6F8563;
+
+    margin: 0;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        1px 1px 0 rgba(255,255,255,0.5);
+}
+
+
+/* =========================================
+   FECHA
+========================================= */
+
+.fecha {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 1.15rem;
+
+    letter-spacing: 4px;
+
+    color: #665548;
+
+    margin-top: 22px;
+}
+
+
+/* =========================================
+   FRASE
+========================================= */
+
+.frase {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 1.15rem;
+
+    line-height: 1.5;
+
+    color: #806F61;
+
+    margin-bottom: 32px;
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+.boton-abrir {
+
+    border: 1px solid #8A9A82;
+
+    background: rgba(255,255,255,0.25);
+
+    color: #66775D;
+
+    padding: 13px 34px;
+
+    border-radius: 40px;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.72rem;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+
+    backdrop-filter: blur(4px);
+}
+
+.boton-abrir:hover {
+
+    background: #8A9A82;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   PAPEL PICADO
+========================================= */
+
+.papel-picado {
+
+    position: absolute;
+
     top: 0;
     left: 0;
-    z-index: 1000;
-    transition: opacity 1.2s ease, visibility 1.2s;
-}
 
-/* PORTADA CORREGIDA */
-.cover-content {
-    position: relative;
-    z-index: 2;
-    margin-bottom: 5vh; /* Cambiamos 180px por un margen dinámico más pequeño */
-}
+    width: 100%;
 
-.cover h1 {
-    font-family: 'Tangerine', cursive !important;
-    font-size: 6.5rem; /* Aumentamos el tamaño del nombre */
-    margin: 5px 0;
-    color: var(--verde-oscuro);
-    text-shadow: 2px 2px 4px rgba(255,255,255,0.5); /* Le da un poco de relieve */
-}
+    height: 28px;
 
-.subtitulo-caps {
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 0.8rem; /* Un poquito más grande que antes */
-    font-weight: 600;
-}
-
-
-.cover h1 {
-    font-size: 5.5rem;
-    margin: 10px 0;
-    color: var(--verde-oscuro);
-}
-
-.cover button {
-    padding: 15px 40px;
-    font-size: 1rem; /* Texto más claro */
-    letter-spacing: 2px;
-    background-color: var(--color-menta);
-    border-radius: 50px;
-    margin-top: 20px;
-    /* Mantenemos tus sombras y transiciones */
-}
-
-.cover button:hover {
-    transform: scale(1.05);
-}
-
-.dino-principal {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 450px;
-    z-index: 1;
-}
-
-/* CONTENIDO */
-#contenido {
-    display: none;
-}
-
-section {
-    min-height: auto; /* Quitamos el 80vh que las separaba mucho */
     display: flex;
+
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 10px 20px; /* Reducimos el espacio arriba y abajo de cada sección */
+
+    z-index: 2;
+
+    opacity: 0.55;
 }
 
-.card {
-    background-color: white;
-    padding: 30px 25px; /* Reducimos el espacio interno para que no sea tan gigante */
-    border-radius: 25px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    margin: 5px auto; /* Reducimos el espacio entre una tarjeta y otra */
+.papel-picado span {
+
+    width: 42px;
+
+    height: 28px;
+
+    margin: 0 2px;
+
+    background: #A3B18A;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 80%,
+        85% 100%,
+        70% 80%,
+        50% 100%,
+        30% 80%,
+        15% 100%,
+        0 80%
+    );
 }
 
-.card h2 {
-    font-family: 'Tangerine', cursive !important;
-    font-size: 4rem; /* Títulos más llamativos */
-    margin-bottom: 5px;
-    color: var(--color-menta);
+.papel-picado span:nth-child(2),
+.papel-picado span:nth-child(6) {
+
+    background: #AFC1D0;
 }
 
-.card p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem; /* Aumentamos de 1rem a 1.1rem para que se lea bien */
-    line-height: 1.5;
+.papel-picado span:nth-child(3),
+.papel-picado span:nth-child(5) {
+
+    background: #C8B39A;
 }
 
-/* Ajuste específico para el contador */
-#cuenta {
-    font-size: 3.2rem; /* El contador debe destacar */
-    margin: 15px 0;
+.papel-picado span:nth-child(4) {
+
+    background: #A57E63;
 }
 
-.detalle {
-    width: 50px;
-    height: 3px;
-    background-color: var(--color-verde-lima);
-    margin: 10px auto 20px auto;
-}
 
-/* Contenedor de la lista */
-.lista-nombres {
-    display: inline-block;
-    text-align: left; /* Alineamos el texto a la izquierda para que las viñetas se vean ordenadas */
-    margin-top: 15px;
-}
+/* =========================================
+   DECORACIONES
+========================================= */
 
-/* Estilo de la viñeta (como en Word) */
-.lista-nombres p {
-    position: relative;
-    padding-left: 25px; /* Espacio para la viñeta */
-    margin-bottom: 12px;
-    line-height: 1.4;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    color: #555;
-}
+.decoracion {
 
-/* El símbolo de la viñeta */
-.lista-nombres p::before {
-    content: "♦"; /* Puedes cambiarlo por "•" o "🌿" */
     position: absolute;
-    left: 0;
-    color: var(--color-menta); /* Color de tu paleta */
-    font-size: 0.8rem;
-    top: 2px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    pointer-events: none;
+
+    z-index: 3;
 }
 
-/* Ajuste para que la columna esté centrada pero su contenido alineado a la viñeta */
-.columna-familia {
+.decoracion-superior {
+
+    font-size: 2.5rem;
+
+    opacity: 0.55;
+}
+
+.decoracion-superior.izquierda {
+
+    top: 12%;
+
+    left: 10%;
+
+    color: #A3B18A;
+
+    transform: rotate(-15deg);
+}
+
+.decoracion-superior.derecha {
+
+    top: 17%;
+
+    right: 10%;
+
+    color: #AFC1D0;
+
+    transform: rotate(20deg);
+}
+
+
+/* =========================================
+   DECORACIONES INFERIORES
+========================================= */
+
+.inferior-izquierda {
+
+    bottom: 8%;
+
+    left: 7%;
+
+    font-size: 3.5rem;
+
+    opacity: 0.55;
+
+    transform: rotate(-15deg);
+}
+
+.inferior-derecha {
+
+    bottom: 9%;
+
+    right: 7%;
+
+    font-size: 3.3rem;
+
+    opacity: 0.45;
+
+    transform: rotate(10deg);
+}
+
+
+/* =========================================
+   FLORES PEQUEÑAS
+========================================= */
+
+.flor {
+
+    position: absolute;
+
+    pointer-events: none;
+
+    opacity: 0.45;
+}
+
+.flor-1 {
+
+    top: 34%;
+
+    left: 6%;
+
+    color: #A57E63;
+
+    font-size: 1.2rem;
+
+    transform: rotate(20deg);
+}
+
+.flor-2 {
+
+    top: 42%;
+
+    right: 7%;
+
+    color: #A3B18A;
+
+    font-size: 1.5rem;
+
+    transform: rotate(-15deg);
+}
+
+.flor-3 {
+
+    bottom: 24%;
+
+    left: 13%;
+
+    color: #AFC1D0;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   INDICADOR
+========================================= */
+
+.indicador {
+
+    position: absolute;
+
+    bottom: 18px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #8C7D70;
+
+    font-size: 0.58rem;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    z-index: 10;
+
+    opacity: 0.7;
+}
+
+.flecha {
+
+    margin-top: 5px;
+
+    font-size: 1rem;
+
+    animation: bajar 1.5s infinite;
+}
+
+
+/* =========================================
+   ANIMACIÓN
+========================================= */
+
+@keyframes bajar {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   CONTENIDO DE PRUEBA
+========================================= */
+
+.contenido-prueba {
+
+    min-height: 100vh;
+
     display: flex;
-    flex-direction: column;
+
+    justify-content: center;
+
     align-items: center;
-}
-.info-evento {
-    margin-top: 20px;
+
+    text-align: center;
+
+    padding: 40px;
+
+    background: #F4EEE4;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 1.5rem;
 }
 
-.info-evento p {
-    margin: 5px 0;
-}
 
-/* BOTONES */
-.btn-mapa {
-    display: inline-block;
-    text-decoration: none;
-    padding: 10px 20px;
-    background-color: var(--color-verde-claro);
-    color: white;
-    border-radius: 20px;
-    margin-top: 15px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    transition: background-color 0.3s;
-}
+/* =========================================
+   PORTADA ABIERTA
+========================================= */
 
-.btn-confirmar {
-    display: inline-block;
-    text-decoration: none;
-    padding: 15px 35px;
-    background-color: var(--color-menta);
-    color: white;
-    border-radius: 30px;
-    margin-top: 25px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: background-color 0.3s;
-}
+.portada.abierta {
 
-.btn-mapa:hover, .btn-confirmar:hover {
-    background-color: var(--verde-oscuro);
-}
-
-/* FOTOS */
-.foto-grande {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-.foto-mediana {
-    width: 60%;
-    max-width: 300px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 50%; /* Foto redonda para el bebé solo */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* CONTADOR */
-#cuenta {
-    font-family: 'Tangerine', cursive;
-    font-size: 2.8rem;
-    color: var(--verde-oscuro);
-}
-
-/* ANIMACIONES */
-.animar {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease;
-}
-/* Ajuste para que el itinerario y regalos se pongan uno al lado del otro */
-.grid-familia {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 20px;
-    flex-wrap: wrap; /* Si la pantalla es muy chica, se ponen uno abajo del otro */
-    margin-top: 20px;
+
+    transform: translateY(-20px);
+
+    pointer-events: none;
 }
 
-.columna-familia {
-    flex: 1;
-    min-width: 140px;
-    max-width: 200px;
-}
 
-/* Forzar que los títulos de estas secciones también sean Tangerine */
-.card h2 {
-    font-family: 'Tangerine', cursive !important;
-}
+/* =========================================
+   CELULAR PEQUEÑO
+========================================= */
 
-/* Estilo para los links de regalo para que no parezcan botones de mapa gigantes */
-.card .btn-mapa {
-    font-size: 0.75rem;
-    padding: 8px 15px;
-    letter-spacing: 1px;
-}
-.animar.visible {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 380px) {
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    .fecha {
+        font-size: 1rem;
+    }
+
+    .frase {
+        font-size: 1rem;
+    }
+
+    .inferior-izquierda,
+    .inferior-derecha {
+        font-size: 2.5rem;
+    }
 }
