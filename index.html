@@ -1,159 +1,133 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta property="og:title" content="Bautizo de Noah">
-    <meta property="og:description" content="¡Te invitamos a celebrar con nosotros!">
-    <meta property="og:image" content="https://yunuen0910.github.io/Noah_Invita/img/DINO_PRINCIPAL.png">
-    <meta property="og:url" content="https://yunuen0910.github.io/Noah_Invita/">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bautizo de NOAH</title>
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div id="cover" class="cover">
-        <div class="cover-content">
-            <p class="subtitulo-caps">Nos complace Invitarte al Bautizo de</p>
-            <h1>Noah</h1>
-            <br>
-            <button onclick="abrirInvitacion()">Abrir Invitación</button>
-        </div>
-        <img src="img/DINO_PRINCIPAL.png" alt="Dino Noah" class="dino-principal">
-    </div>
+    <!-- =========================
+         PORTADA
+    ========================== -->
 
+    <main class="portada" id="portada">
+
+        <!-- Decoración superior -->
+        <div class="decoracion decoracion-superior izquierda">
+            ✿
+        </div>
+
+        <div class="decoracion decoracion-superior derecha">
+            ❀
+        </div>
+
+        <!-- Papel picado decorativo -->
+        <div class="papel-picado">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <!-- Contenido principal -->
+
+        <div class="contenido-portada">
+
+            <p class="texto-pequeno">
+                BAUTIZO
+            </p>
+
+            <div class="ornamento">
+                ───── ✿ ─────
+            </div>
+
+            <h1>
+                NOAH
+            </h1>
+
+            <p class="fecha">
+                16 · JUNIO · 2027
+            </p>
+
+            <div class="ornamento inferior">
+                ❦
+            </div>
+
+            <p class="frase">
+                Una celebración llena<br>
+                de amor
+            </p>
+
+            <button
+                class="boton-abrir"
+                id="botonAbrir">
+                Abrir invitación
+            </button>
+
+        </div>
+
+
+        <!-- Decoraciones inferiores -->
+
+        <div class="decoracion inferior-izquierda">
+            🌿
+        </div>
+
+        <div class="decoracion inferior-derecha">
+            🌵
+        </div>
+
+        <div class="flor flor-1">✿</div>
+        <div class="flor flor-2">❀</div>
+        <div class="flor flor-3">✿</div>
+
+
+        <!-- Indicador inferior -->
+
+        <div class="indicador">
+            <span>Descubre la celebración</span>
+            <div class="flecha">↓</div>
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         CONTENIDO TEMPORAL
+         Lo sustituiremos después
+    ========================== -->
+
+    <section class="contenido-prueba">
+
+        <p>Bienvenidos a la celebración de NOAH 🤍</p>
+
+    </section>
+
+
+    <!-- Música -->
     <audio id="musica" loop>
-        <source src="img/Estrellita.mp3" type="audio/mpeg">
+        <source src="musica.mp3" type="audio/mpeg">
     </audio>
 
-    <div id="contenido">
-        
-        <section class="animar seccion-bienvenida">
-    <div class="card">
-        <h2>Mi Bautizo & Primer Año</h2>
-        <div class="detalle"></div>
-        
-        <p style="margin-bottom: 20px;">
-            Con la alegría de mi primer año de vida y la pureza de un corazón que empieza a conocer a Dios, hoy recibo mi primer sacramento.
-        </p>
-        
-        <p style="font-style: italic; margin-bottom: 25px;">
-            Hoy celebro la dicha de existir y el compromiso de crecer bajo el manto de la fe, rodeado de amor y de buenos ejemplos. Te invito a ser parte de esta doble celebración donde el agua bendita marcará el inicio de mi historia con Jesús y mi pastel de cumpleaños será el símbolo de un año lleno de bendiciones.
-        </p>
 
-        <div id="cuenta"></div> <p id="fecha-texto" style="font-weight: 600; color: var(--verde-oscuro); margin-top: 15px; letter-spacing: 1px;"></p>
-    </div>
-</section>
-
-<section class="animar seccion-familia">
-    <div class="card">
-        <h2>Mis Padres</h2>
-        <div class="detalle"></div>
-        
-        <div class="grid-familia">
-            <div class="columna-familia">
-                <div class="lista-nombres">
-                    <p>Miguel De Jésus Trigueros Garcia</p>
-                    <p>Bellkies Garcia</p>
-                </div>
-            </div>
-            <h2>Mis Padrinos</h2>
-        <div class="detalle"></div>
-            <div class="columna-familia">
-                    <div class="lista-nombres">
-                    <p>Nombre del Padrino</p>
-                    <p>Nombre de la Madrina</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <section class="animar seccion-foto-principal">
-            <img src="img/FOTO_DE_FAMILIA.jpg" alt="Familia Noah" class="foto-grande">
-        </section>
-
-       <section class="animar seccion-evento">
-            <div class="card">
-                <h2>Ceremonia Religiosa</h2>
-                <div class="detalle"></div>
-                <div class="info-evento">
-                    <p><strong>Hora:</strong> 12:00 hrs</p>
-                    <p><strong>Lugar:</strong> Parroquia de San Francisco</p>
-                    <p>Calle Principal #123, Ciudad</p>
-                </div>
-                <a href="https://share.google/NCnTxL2NXAfChSaHe" target="_blank" class="btn-mapa">Ver Ubicación (Misa)</a>
-            </div>
-        </section>
-        <section class="animar seccion-foto-bebe">
-            <img src="--- FOTO_DEL_BEBE.jpg ---" alt="Noah" class="foto-mediana">
-        </section>
-
-        <section class="animar seccion-evento">
-            <div class="card card-recepcion">
-                <h2>Recepción</h2>
-                <div class="detalle"></div>
-                <div class="info-evento">
-                    <p><strong>Hora:</strong> 14:00 hrs</p>
-                    <p><strong>Lugar:</strong> Salón "El Jardín"</p>
-                    <p>Avenida Las Palmas #456, Ciudad</p>
-                </div>
-                <a href="https://share.google/HXHiYoXar7ox96e7I" target="_blank" class="btn-mapa">Ver Ubicación (Salón)</a>
-            </div>
-        </section>
-        <section class="animar">
-    <div class="card">
-        <h2>Itinerario</h2>
-        <div class="detalle"></div>
-        <div class="grid-familia">
-            <div class="columna-familia">
-                <img src="img/iglesia.png" alt="Misa" style="width: 45px; margin-bottom: 10px;">
-                <p><strong>12:00 PM</strong></p>
-                <p>Ceremonia Religiosa</p>
-            </div>
-            <div class="columna-familia">
-                <img src="img/sombrero-de-fiesta.png" alt="Fiesta" style="width: 45px; margin-bottom: 10px;">
-                <p><strong>02:00 PM</strong></p>
-                <p>Recepción</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="animar">
-    <div class="card">
-        <div class="grid-familia">
-            <div class="columna-familia">
-                <img src="img/vestido-de-novia.png" alt="Vestimenta" style="width: 45px; margin-bottom: 10px;">
-                <h2>Vestimenta</h2>
-                <p><strong>FORMAL</strong></p>
-                <p style="font-size: 0.85rem;">Te agradecemos evitar el uso de color blanco.</p>
-            </div>
-            
-            <div class="columna-familia">
-                <img src="img/fiesta.png" alt="Regalos" style="width: 45px; margin-bottom: 10px;">
-                <h2>Regalos</h2>
-                <p style="font-size: 0.85rem; margin-bottom: 10px;">Tu presencia es nuestro mejor regalo, pero si deseas darnos un detalle:</p>
-                <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <a href="TU_LINK_AMAZON" target="_blank" class="btn-mapa" style="margin-top:0;">AMAZON</a>
-                    <a href="TU_LINK_LIVERPOOL" target="_blank" class="btn-mapa" style="margin-top:0;">LIVERPOOL</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <section class="animar seccion-confirmacion">
-            <div class="card">
-                <h2>Asistencia</h2>
-                <div class="detalle"></div>
-                <p>Tu presencia es nuestro mejor regalo.</p>
-                <a href="https://wa.me/TUNUMERO?text=Hola,%20confirmo%20asistencia%20al%20bautizo%20de%20Noah" target="_blank" class="btn-confirmar">Confirmar por WhatsApp</a>
-            </div>
-        </section>
-
-    </div>
-
+    <!-- JavaScript -->
     <script src="script.js"></script>
+
 </body>
 </html>
